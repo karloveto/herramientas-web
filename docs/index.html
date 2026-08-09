@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Editor HTML Claro y herramientas ShareLinks">
+  <title>Herramientas ShareLinks</title>
+  <style>
+    :root { color-scheme: light; --navy:#002233; --purple:#a44dff; --cyan:#00dbff; --paper:#f6f5ef; --muted:#60747b; }
+    * { box-sizing:border-box; }
+    body { min-height:100vh; margin:0; color:var(--navy); background:var(--paper); font-family:Inter,Segoe UI,Arial,sans-serif; }
+    header { padding:54px 24px 50px; color:#fff; text-align:center; background:var(--navy); }
+    .eyebrow { margin:0 0 10px; color:var(--cyan); font-size:12px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(32px,6vw,58px); letter-spacing:-.04em; }
+    header p:last-child { max-width:620px; margin:14px auto 0; color:#c8d8dc; font-size:17px; line-height:1.6; }
+    main { width:min(980px,calc(100% - 32px)); margin:-24px auto 0; padding-bottom:50px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    article { display:flex; min-height:300px; padding:30px; flex-direction:column; background:#fff; border:1px solid rgba(0,34,51,.12); border-radius:14px; box-shadow:0 16px 34px rgba(0,34,51,.1); }
+    article.primary { border-top:7px solid var(--purple); }
+    article.local { border-top:7px solid #008ba3; }
+    .tag { align-self:flex-start; padding:5px 9px; color:var(--navy); background:#e8fbff; border-radius:999px; font-size:11px; font-weight:800; text-transform:uppercase; }
+    h2 { margin:20px 0 9px; font-size:26px; }
+    article p { margin:0; color:var(--muted); line-height:1.65; }
+    .button { display:inline-flex; min-height:48px; margin-top:auto; padding:12px 18px; align-items:center; justify-content:center; color:#fff; background:var(--purple); border-radius:7px; font-weight:800; text-decoration:none; }
+    .button.secondary { background:#008ba3; }
+    .button.disabled { color:#6d7d82; background:#e6ecee; cursor:not-allowed; }
+    .note { margin:22px 0 0; padding:16px 18px; color:#455c64; background:#fff9e8; border-left:4px solid #ff8900; border-radius:0 8px 8px 0; line-height:1.55; }
+    footer { padding:8px 20px 32px; color:#708087; text-align:center; font-size:13px; }
+    @media (max-width:720px) { header { padding-top:38px; } .grid { grid-template-columns:1fr; } article { min-height:270px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">ShareLinks · herramientas</p>
+    <h1>¿Qué deseas abrir?</h1>
+    <p>El Editor HTML funciona completamente en línea. La exportación de ShareLinks se mantiene como herramienta local por seguridad.</p>
+  </header>
+  <main>
+    <section class="grid" aria-label="Herramientas disponibles">
+      <article class="primary">
+        <span class="tag">Disponible en línea</span>
+        <h2>Editor HTML</h2>
+        <p>Edita, previsualiza y prepara HTML con videos, secciones, divisores, tablas, colores y generación de imágenes Display.</p>
+        <a class="button" href="editor.html">Abrir Editor HTML</a>
+      </article>
+      <article class="local">
+        <span class="tag">Requiere Windows</span>
+        <h2>Exportar ShareLinks</h2>
+        <p>Descarga documentación y genera fuentes para NotebookLM. Necesita PowerShell, Chrome local y tu sesión autenticada.</p>
+        <span class="button disabled" aria-disabled="true">Disponible solamente en la suite local</span>
+      </article>
+    </section>
+    <p class="note"><strong>¿Por qué la exportación no funciona en línea?</strong> GitHub Pages solo publica archivos estáticos y no puede ejecutar PowerShell, controlar Chrome ni acceder a una sesión privada de ShareLinks.</p>
+  </main>
+  <footer>HTML Claro funciona localmente en tu navegador; tus documentos no se envían a un servidor.</footer>
+</body>
+</html>
