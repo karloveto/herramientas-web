@@ -135,6 +135,8 @@
     .tool-group:last-child { border-right: 0; }
 
     .tool-button {
+      display: inline-flex;
+      align-items: center;
       min-height: 36px;
       padding: 7px 11px;
       color: var(--ink);
@@ -144,6 +146,8 @@
       white-space: nowrap;
       font-size: 13px;
       font-weight: 650;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .tool-button:hover:not(:disabled) {
@@ -668,6 +672,7 @@
         <button class="tool-button primary" id="open-file" type="button">Abrir archivo</button>
         <input id="file-input" type="file" accept=".html,.htm,.txt,text/html,text/plain" hidden>
         <button class="tool-button" id="new-document" type="button">Nuevo</button>
+        <a class="tool-button" href="constructor.html">Constructores guiados</a>
       </div>
       <div class="tool-group">
         <button class="tool-button" id="undo" type="button" disabled>Deshacer <span class="key">Ctrl Z</span></button>
