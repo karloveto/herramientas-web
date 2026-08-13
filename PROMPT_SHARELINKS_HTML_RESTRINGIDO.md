@@ -31,7 +31,7 @@ REGLAS OBLIGATORIAS
 
 SI EL TIPO ES CABECERA
 
-Incluye hero, contexto, soluciones destacadas, accesos documentales e índice compacto hacia los módulos de la página. No inventes enlaces ni soluciones.
+Incluye hero, contexto, soluciones destacadas, accesos documentales e índice compacto hacia los módulos de la página. No inventes enlaces ni soluciones. Si se proporciona un logo o imagen, colócalo en una tarjeta a la derecha del hero, agrega texto alternativo y déjalo incrustado como data URL; nunca uses rutas locales del equipo.
 
 SI EL TIPO ES TEMA HTML
 

@@ -13,6 +13,10 @@ for (const file of files) {
     assert.match(html, /Integración ShareLinks/);
     assert.match(html, /id="theme-preview"/);
     assert.match(html, /id="header-preview"/);
+    assert.match(html, /id="header-image" type="file"/);
+    assert.match(html, /image\/png,image\/jpeg,image\/webp/);
+    assert.match(html, /optimizeHeaderImage/);
+    assert.match(html, /class="brand-image"/);
     assert.match(html, /Paleta controlada/);
     assert.doesNotMatch(html, /type="color"/);
   });

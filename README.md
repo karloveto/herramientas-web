@@ -7,7 +7,7 @@ Editor visual local para HTML estático. Permite modificar el código y la vista
 `constructor.html` reúne dos constructores restringidos:
 
 - **Tema HTML:** importa Markdown/HTML y permite agregar secciones, párrafos, listas, pasos, tablas, tarjetas, notas, advertencias y código. La plantilla y la paleta no se pueden modificar.
-- **Cabecera:** genera hero, contexto, soluciones, accesos documentales e índice compacto con las mismas reglas institucionales.
+- **Cabecera:** genera hero, contexto, soluciones, accesos documentales e índice compacto con las mismas reglas institucionales. Permite cargar un logo PNG, JPG o WebP, lo optimiza y lo incrusta en el HTML para evitar dependencias externas.
 
 Ambos generan archivos `.md` que comienzan con `<style>`, validan IDs, encabezados, detalles, scripts y paleta, y procesan todo dentro del navegador. El prompt equivalente está en `PROMPT_SHARELINKS_HTML_RESTRINGIDO.md`.
 
