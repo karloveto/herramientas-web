@@ -15,8 +15,6 @@ El botón **Insertar icono** incluye una paleta técnica controlada y coloca el 
 
 El botón **Importar página completa**, ubicado arriba junto a **Abrir editor avanzado**, genera simultáneamente el body editable y la cabecera. La introducción alimenta la descripción y el contexto de la cabecera; los módulos, subtemas e IDs reales del body reconstruyen automáticamente sus accesos documentales y su índice.
 
-En el **Constructor de cabecera**, la opción **Agregar bodies al índice** permite elegir varios archivos a la vez o agregarlos en distintas cargas. Cada body se convierte en un módulo, sus acordeones se convierten en subtemas y los archivos se acumulan sin borrar los anteriores; también pueden retirarse individualmente o limpiarse en conjunto.
-
 ## Uso rápido
 
 1. Abre `editor.html` en un navegador moderno.
