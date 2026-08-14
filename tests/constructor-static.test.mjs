@@ -38,6 +38,10 @@ for (const file of files) {
     assert.match(html, /class="step-list"/);
     assert.match(html, /class="sub-title"/);
     assert.match(html, /looksHtml=.*style\|div\|details\|h1/);
+    assert.match(html, /confluence=d\.querySelector\("#main-content"\)/);
+    assert.match(html, /querySelectorAll\(`h1,h2,h3,h4,h5,h6/);
+    assert.match(html, /sections\.unshift\(intro\)/);
+    assert.match(html, /parsed\.tags\?\.join\(", "\)\|\|""/);
     assert.match(html, /details\.section/);
     assert.match(html, /Paleta controlada/);
     assert.doesNotMatch(html, /type="color"/);
