@@ -14,28 +14,28 @@ Tipo de salida: [TEMA HTML / CABECERA DE CLIENTE]
 
 REGLAS OBLIGATORIAS
 
-1. Conserva toda la información fuente: no resumas, elimines tablas, listas, rutas, comandos, ejemplos, notas, advertencias, cifras, fechas o identificadores.
-2. Genera un archivo `.md` cuyo contenido sea exclusivamente CSS y HTML. Debe comenzar directamente con `<style>`.
-3. Usa solo HTML y CSS: sin JavaScript, librerías, fuentes o servidores externos.
-4. Encapsula todo bajo un ID único derivado del proyecto. No uses reglas globales.
-5. Paleta bloqueada: `#002233`, `#00DBFF`, `#A44DFF` y `#FF8900`. Colores auxiliares permitidos: `#ffffff`, `#000000`, `#183247`, `#667b8c`, `#d9e3e8`, `#eef6f8`, `#f7fafb`, `#f4effa`, `#fff7e6` y `#edf2f7`.
-6. Tipografía: Verdana, Geneva, sans-serif. Código: Consolas, "Courier New", monospace.
-7. Hero obligatorio: `linear-gradient(130deg,#A44DFF 0%,#7e22ce 42%,#2563eb 72%,#00DBFF 100%)` y `padding:48px 34px 36px`.
-8. Las secciones principales usan `<details class="section">` cerrados. El summary lleva fondo `#002233`, círculo `#00DBFF`, título blanco y subtítulo cyan.
-9. Solo se permiten un `<h1>` en el hero y `<h2>` dentro de summary. Prohibidos `<h3>` a `<h6>`. Para subtítulos internos usa `<div class="sub-title">`; para tarjetas, `<div class="card-title">`.
-10. IDs únicos, cortos, sin acentos, espacios, comas ni interrogaciones. Cada details, ancla y h2 debe tener un ID distinto.
-11. Tablas dentro de `.table-wrap`; `th` y `th *` fuerzan `background:#002233!important` y `color:#ffffff!important`.
-12. Usa tarjetas, pasos, callouts y tablas solo para reorganizar visualmente la información, sin cambiar su significado.
-13. Incluye `@media` para 760px y 440px. No agregues footer, comentarios ni código redundante.
-14. Valida: inicio `<style>`, CSS encapsulado, cero scripts, cero H3-H6, cero IDs duplicados, detalles cerrados, paleta permitida y tablas homologadas.
+1. Conserva toda la información fuente: no resumas ni elimines tablas, listas, rutas, comandos, ejemplos, notas, advertencias, cifras, fechas o identificadores.
+2. Genera un archivo `.md` cuyo contenido sea exclusivamente CSS y HTML y comience directamente con `<style>`.
+3. No uses JavaScript, librerías ni fuentes externas. Solo se permite una URL externa cuando la fuente proporciona explícitamente un video o enlace documental.
+4. Encapsula todo bajo un ID único derivado del proyecto; no uses reglas globales.
+5. Usa el sistema visual vigente de la página Costco: navy `#002233`, cyan `#00DBFF`, purple `#A44DFF`, orange `#FF8900`, gradiente `130deg` y neutros institucionales. No inventes colores.
+6. Tipografía Verdana, Geneva, sans-serif; código Consolas, "Courier New", monospace.
+7. En temas, el hero usa `padding:48px 34px 36px`, eyebrow cyan, etiquetas `.hero-tag` con icono textual y bloque `.hero-highlights` con checks cyan cuando existan datos.
+8. Los indicadores usan `.summary-cards`; las secciones principales usan `<details class="section">` cerrados; el summary lleva fondo navy, círculo cyan, H2 blanco, subtítulo cyan y flecha.
+9. Jerarquía: un H1 en el hero, H2 en cada summary y H3 con `class="sub-title"` para subtítulos internos. No uses H4-H6.
+10. Tarjetas `.feature-grid`/`.feature-card`, pasos `.step-list`/`.step-item`, notas `.note-box`, ideas `.purple-box`, advertencias `.warning-box` y tablas dentro de `.table-wrap`.
+11. IDs únicos, sin acentos ni espacios. Cada details, H2 y H3 debe tener su propio ID.
+12. Los TH fuerzan `background:#002233!important` y `color:#ffffff!important`.
+13. Incluye responsive para 760px y 440px en temas; 900px y 650px en cabeceras.
+14. Valida: inicio STYLE, CSS encapsulado, cero scripts, cero H4-H6, IDs únicos, temas cerrados, paleta bloqueada y tablas homologadas.
 
 SI EL TIPO ES CABECERA
 
-Incluye hero, contexto, soluciones destacadas, accesos documentales e índice compacto hacia los módulos de la página. No inventes enlaces ni soluciones. Si se proporciona un logo o imagen, colócalo en una tarjeta a la derecha del hero, agrega texto alternativo y déjalo incrustado como data URL; nunca uses rutas locales del equipo.
+Replica la estructura vigente: hero con punto cyan antes del descriptor; logo dentro de tarjeta blanca a la derecha; contexto con icono ◆; soluciones en tres tarjetas; directorio con icono →, numeración 01-06; e índice abierto con icono ☰, tarjetas de módulo y subenlaces. Si se proporciona imagen, incrústala como data URL con texto alternativo; nunca uses rutas locales.
 
 SI EL TIPO ES TEMA HTML
 
-Incluye hero, etiquetas, indicadores solo si existen en la fuente, instrucción de acordeones y todas las secciones principales en details.
+Incluye hero, etiquetas con iconos si la fuente las proporciona, resaltados con ✓, video solo si existe URL proporcionada, indicadores solo si existen y todas las secciones en acordeones.
 
 ENTREGA
 
