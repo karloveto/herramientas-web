@@ -13,6 +13,8 @@ Ambos generan archivos `.md` que comienzan con `<style>`, validan IDs, encabezad
 
 El botón **Insertar icono** incluye una paleta técnica controlada y coloca el icono en el campo de texto activo, justo en la posición del cursor.
 
+Al importar una página exportada, el Studio genera simultáneamente el body y la cabecera. La introducción alimenta la descripción y el contexto de la cabecera; los módulos, subtemas e IDs reales del body reconstruyen automáticamente sus accesos documentales y su índice.
+
 ## Uso rápido
 
 1. Abre `editor.html` en un navegador moderno.

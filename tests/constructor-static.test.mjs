@@ -42,6 +42,11 @@ for (const file of files) {
     assert.match(html, /querySelectorAll\(`h1,h2,h3,h4,h5,h6/);
     assert.match(html, /sections\.unshift\(intro\)/);
     assert.match(html, /parsed\.tags\?\.join\(", "\)\|\|""/);
+    assert.match(html, /id="import-result"/);
+    assert.match(html, /function themeSectionId/);
+    assert.match(html, /function themeIndexValue/);
+    assert.match(html, /function populateHeaderFromImport/);
+    assert.match(html, /Body y cabecera generados/);
     assert.match(html, /details\.section/);
     assert.match(html, /Paleta controlada/);
     assert.doesNotMatch(html, /type="color"/);
