@@ -11,6 +11,8 @@ Editor visual local para HTML estático. Permite modificar el código y la vista
 
 Ambos generan archivos `.md` que comienzan con `<style>`, validan IDs, encabezados, detalles, scripts y paleta, y procesan todo dentro del navegador. El prompt equivalente está en `PROMPT_SHARELINKS_HTML_RESTRINGIDO.md`.
 
+El botón **Insertar icono** incluye una paleta técnica controlada y coloca el icono en el campo de texto activo, justo en la posición del cursor.
+
 ## Uso rápido
 
 1. Abre `editor.html` en un navegador moderno.

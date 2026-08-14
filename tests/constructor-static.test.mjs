@@ -19,6 +19,11 @@ for (const file of files) {
     assert.match(html, /class="brand-image"/);
     assert.match(html, /id="theme-highlights"/);
     assert.match(html, /id="theme-video-url"/);
+    assert.match(html, /id="theme-icon-picker"/);
+    assert.match(html, /id="header-icon-picker"/);
+    assert.match(html, /id="icon-dialog"/);
+    assert.match(html, /const iconChoices=/);
+    assert.match(html, /function insertIcon/);
     assert.match(html, /class="hero-tag"/);
     assert.match(html, /class="hero-highlights"/);
     assert.match(html, /class="hero-highlight-icon">✓/);
