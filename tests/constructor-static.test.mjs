@@ -50,7 +50,11 @@ for (const file of files) {
     assert.match(html, /function themeIndexValue/);
     assert.match(html, /function populateHeaderFromImport/);
     assert.match(html, /Body y cabecera generados/);
-    assert.match(html, /set\("header-index",themeIndexValue\(client,sections\)\)/);
+    assert.match(html, /function importedIndexValue/);
+    assert.match(html, /function extractDesignedComponents/);
+    assert.match(html, /set\("header-index",existingIndex\|\|themeIndexValue\(client,sections\)\)/);
+    assert.match(html, /preservedImport=\{theme:designed\.theme,header:designed\.header,guideCount:designed\.guideCount\}/);
+    assert.match(html, /Diseño original conservado/);
     assert.match(html, /details\.section/);
     assert.match(html, /Paleta controlada/);
     assert.doesNotMatch(html, /type="color"/);
