@@ -14,9 +14,10 @@
     h1 { margin:0; font-size:clamp(32px,6vw,58px); letter-spacing:-.04em; }
     header p:last-child { max-width:620px; margin:14px auto 0; color:#c8d8dc; font-size:17px; line-height:1.6; }
     main { width:min(980px,calc(100% - 32px)); margin:-24px auto 0; padding-bottom:50px; }
-    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
     article { display:flex; min-height:300px; padding:30px; flex-direction:column; background:#fff; border:1px solid rgba(0,34,51,.12); border-radius:14px; box-shadow:0 16px 34px rgba(0,34,51,.1); }
     article.primary { border-top:7px solid var(--purple); }
+    article.guided { border-top:7px solid var(--cyan); }
     article.local { border-top:7px solid #008ba3; }
     .tag { align-self:flex-start; padding:5px 9px; color:var(--navy); background:#e8fbff; border-radius:999px; font-size:11px; font-weight:800; text-transform:uppercase; }
     h2 { margin:20px 0 9px; font-size:26px; }
@@ -42,6 +43,12 @@
         <h2>Editor HTML</h2>
         <p>Edita, previsualiza y prepara HTML con videos, secciones, divisores, tablas, colores y generación de imágenes Display.</p>
         <a class="button" href="editor.html">Abrir Editor HTML</a>
+      </article>
+      <article class="guided">
+        <span class="tag">Diseño restringido</span>
+        <h2>ShareLinks Studio</h2>
+        <p>Crea temas y cabeceras homologadas mediante formularios. La paleta, las clases y las reglas técnicas permanecen bloqueadas.</p>
+        <a class="button secondary" href="constructor.html">Abrir constructores</a>
       </article>
       <article class="local">
         <span class="tag">Requiere Windows</span>

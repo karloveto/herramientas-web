@@ -2,6 +2,17 @@
 
 Editor visual local para HTML estático. Permite modificar el código y la vista previa, editar textos directamente y descargar un archivo limpio.
 
+## ShareLinks Studio
+
+`constructor.html` reúne dos constructores restringidos:
+
+- **Tema HTML:** replica la plantilla vigente de Costco con etiquetas e iconos, resaltados del hero, video opcional, indicadores, acordeones, párrafos, listas, pasos, tablas, tarjetas, notas, advertencias y código. La plantilla y la paleta no se pueden modificar.
+- **Cabecera:** genera el hero con punto cyan, contexto con icono, soluciones, directorio numerado e índice abierto con módulos y subtemas. Permite cargar un logo PNG, JPG o WebP, lo optimiza y lo incrusta en el HTML para evitar dependencias externas.
+
+Ambos generan archivos `.md` que comienzan con `<style>`, validan IDs, encabezados, detalles, scripts y paleta, y procesan todo dentro del navegador. El prompt equivalente está en `PROMPT_SHARELINKS_HTML_RESTRINGIDO.md`.
+
+El botón **Insertar icono** incluye una paleta técnica controlada y coloca el icono en el campo de texto activo, justo en la posición del cursor.
+
 ## Uso rápido
 
 1. Abre `editor.html` en un navegador moderno.
