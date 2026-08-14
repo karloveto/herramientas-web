@@ -10,7 +10,8 @@ for (const file of files) {
     assert.match(html, /Constructor de tema/);
     assert.match(html, /Constructor de cabecera/);
     assert.match(html, /Prompt para IA/);
-    assert.match(html, /Integración ShareLinks/);
+    assert.doesNotMatch(html, /Integración ShareLinks/);
+    assert.doesNotMatch(html, /view-integracion/);
     assert.match(html, /id="theme-preview"/);
     assert.match(html, /id="header-preview"/);
     assert.match(html, /id="header-image" type="file"/);
