@@ -9,6 +9,7 @@
 </style>
 <style>.image-control{display:flex;align-items:center;gap:9px;min-height:48px;margin-top:7px;padding:8px;border:1px solid var(--line);border-radius:9px;background:#fbfdfe;color:var(--muted);font-size:9px}.image-control img{width:72px;height:44px;flex:none;object-fit:contain;border:1px solid var(--line);border-radius:6px;background:#fff}.image-control span{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.icon-dialog[hidden]{display:none}.icon-dialog{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(0,34,51,.58)}.icon-card{width:min(560px,100%);overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 20px 55px rgba(0,34,51,.28)}.icon-head{display:flex;align-items:center;gap:12px;padding:13px 16px;background:var(--navy);color:#fff}.icon-head strong{flex:1}.icon-head button{border-color:rgba(255,255,255,.3);background:transparent;color:#fff}.icon-help{margin:0;padding:12px 16px 0;color:var(--muted);font-size:10px}.icon-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;padding:14px 16px 18px}.icon-option{display:grid;min-height:44px;place-items:center;border:1px solid var(--line);border-radius:9px;background:#fff;cursor:pointer;font-size:21px}.icon-option:hover,.icon-option:focus{border-color:var(--purple);background:#f4effa;outline:none}@media(max-width:560px){.icon-grid{grid-template-columns:repeat(6,1fr)}}</style>
 <style>.top-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}.top-actions .editor-link{display:inline-flex;align-items:center;justify-content:center;background:transparent;cursor:pointer}.top-actions .import-page{border-color:rgba(0,219,255,.55);background:rgba(0,219,255,.12)}.top-import-status{max-width:220px;color:#bcecf3;font-size:9px;text-align:right}@media(max-width:700px){.top-actions a.editor-link,.top-import-status{display:none}.top-actions button.editor-link{display:inline-flex}.top-actions .editor-link{padding:8px 10px;font-size:9px}}</style>
+<style>.preview-tools{align-items:center;flex-wrap:wrap}.mini.tool-copy{border-color:var(--cyan);background:var(--cyan);color:var(--navy)}.mini.tool-download{border-color:var(--purple);background:var(--purple);color:#fff}.source{padding:18px;tab-size:2;white-space:pre;overflow:auto}.prompt-tools{display:flex;gap:7px}.prompt-tools .active{border-color:var(--navy);background:var(--navy);color:#fff}@media(max-width:700px){.panel-head{align-items:flex-start;flex-wrap:wrap}.panel-head h2{min-width:100%}.preview-tools{width:100%}}</style>
 </head>
 <body>
 <header class="top"><div class="logo">SL</div><div class="top-copy"><h1>ShareLinks Studio</h1><p>Constructores guiados con diseño institucional bloqueado</p></div><div class="top-actions"><span class="top-import-status" id="import-result" hidden></span><input id="theme-file" type="file" accept=".md,.txt,.html,.htm,text/markdown,text/plain,text/html" hidden><button class="editor-link import-page" id="page-import-button" type="button">Importar página completa</button><a class="editor-link" href="editor.html">Abrir editor avanzado</a></div></header>
@@ -19,7 +20,7 @@
 Alcance | Indica los sistemas, procesos o áreas cubiertas.</textarea></div><div class="field"><label>Título del video (opcional)</label><input id="theme-video-title" placeholder="Video explicativo"></div><div class="field"><label>URL embed del video (opcional)</label><input id="theme-video-url" placeholder="https://www.youtube.com/embed/..."></div><div class="field full"><label>Indicadores (Valor | Etiqueta, uno por línea)</label><textarea id="theme-stats">3 | Secciones principales
 100% | Diseño homologado</textarea></div></div>
 <div class="actions"><button class="btn primary" id="add-section">+ Agregar sección</button><button class="btn" id="theme-icon-picker" type="button">😊 Insertar icono</button><button class="btn" id="theme-example">Cargar ejemplo</button><button class="btn danger" id="theme-reset">Reiniciar</button></div><div id="sections"></div>
-</div></div><div class="panel"><div class="panel-head"><h2>Resultado del tema</h2><div class="preview-tools"><button class="mini active" data-theme-mode="preview">Vista</button><button class="mini" data-theme-mode="source">Código</button></div></div><iframe class="preview output-mode active" id="theme-preview" title="Vista previa del tema"></iframe><textarea class="source output-mode" id="theme-output" readonly></textarea><div class="audit" id="theme-audit"></div><div class="actions" style="padding:0 14px 14px"><button class="btn cyan" id="theme-copy">Copiar HTML</button><button class="btn primary" id="theme-download">Descargar .md</button></div></div></div></section>
+</div></div><div class="panel"><div class="panel-head"><h2>Resultado del tema</h2><div class="preview-tools"><button class="mini active" data-theme-mode="preview">Vista</button><button class="mini" data-theme-mode="source">Código</button><button class="mini tool-copy" id="theme-copy">Copiar HTML</button><button class="mini tool-download" id="theme-download">Descargar .md</button></div></div><iframe class="preview output-mode active" id="theme-preview" title="Vista previa del tema"></iframe><textarea class="source output-mode" id="theme-output" readonly wrap="off" spellcheck="false"></textarea><div class="audit" id="theme-audit"></div></div></div></section>
 
 <section class="view" id="view-cabecera"><div class="builder"><div class="panel"><div class="panel-head"><h2>Cabecera del cliente</h2><span class="badge">DISEÑO BLOQUEADO</span></div><div class="panel-body"><div class="form-grid"><div class="field"><label>Cliente</label><input id="header-client" value="Costco"></div><div class="field"><label>Descriptor</label><input id="header-eyebrow" value="CLIENTE · DOCUMENTACIÓN TÉCNICA NAPSE"></div><div class="field full"><label>Descripción principal</label><textarea id="header-subtitle">Centro de documentación para la operación, arquitectura, integraciones y soluciones del cliente.</textarea></div><div class="field full"><label>Etiquetas (separadas por coma)</label><input id="header-tags" value="Punto de venta, VTOL, Movilidad, Integraciones"></div><div class="field full"><label>Logo o imagen del cliente</label><input id="header-image" type="file" accept="image/png,image/jpeg,image/webp"><small>Se optimiza e incrusta dentro del HTML. No dependerá de rutas locales ni servidores externos.</small><div class="image-control"><img id="header-image-preview" alt="Vista previa del logo" hidden><span id="header-image-name">Sin imagen seleccionada</span><button class="mini" id="header-image-remove" type="button" disabled>Quitar imagen</button></div></div><div class="field full"><label>Texto alternativo de la imagen</label><input id="header-image-alt" value="Logo del cliente" maxlength="160"></div><div class="field full"><label>Contexto</label><textarea id="header-context">Describe aquí la relación con el cliente, el alcance de las soluciones y el propósito de esta página.</textarea></div><div class="field full"><label>Nota histórica o cierre del contexto</label><textarea id="header-history">Agrega aquí un dato histórico, evolución de la relación o contexto complementario.</textarea></div><div class="field full"><label>Soluciones destacadas (Título | Descripción)</label><textarea id="header-relations">Pagos | Procesamiento centralizado y seguro.
 Movilidad | Herramientas para agilizar la operación.
@@ -29,9 +30,9 @@ Referencia técnica | Arquitectura e integraciones | #referencia
 Proyectos | Alcance, calidad y entrega | #proyectos</textarea></div><div class="field full"><label>Índice (Módulo | id | Subtema &gt; id; Subtema &gt; id)</label><textarea id="header-index">Visión general | vision-general | Objetivo > objetivo; Modelo de negocio > modelo-negocio
 Operación diaria | operacion-diaria | Apertura > apertura; Cierre > cierre
 Arquitectura y reglas | arquitectura | Componentes > componentes; Integraciones > integraciones
-Glosario técnico | glosario | Términos > terminos</textarea><small>Cada línea crea una tarjeta de módulo. Los subtemas son opcionales y se separan con punto y coma.</small></div></div><div class="actions"><button class="btn" id="header-icon-picker" type="button">😊 Insertar icono</button><button class="btn" id="header-example">Cargar ejemplo Costco</button><button class="btn danger" id="header-reset">Reiniciar</button></div></div></div><div class="panel"><div class="panel-head"><h2>Resultado de la cabecera</h2><div class="preview-tools"><button class="mini active" data-header-mode="preview">Vista</button><button class="mini" data-header-mode="source">Código</button></div></div><iframe class="preview output-mode active" id="header-preview" title="Vista previa de cabecera"></iframe><textarea class="source output-mode" id="header-output" readonly></textarea><div class="audit" id="header-audit"></div><div class="actions" style="padding:0 14px 14px"><button class="btn cyan" id="header-copy">Copiar HTML</button><button class="btn primary" id="header-download">Descargar .md</button></div></div></div></section>
+Glosario técnico | glosario | Términos > terminos</textarea><small>Cada línea crea una tarjeta de módulo. Los subtemas son opcionales y se separan con punto y coma.</small></div></div><div class="actions"><button class="btn" id="header-icon-picker" type="button">😊 Insertar icono</button><button class="btn" id="header-example">Cargar ejemplo Costco</button><button class="btn danger" id="header-reset">Reiniciar</button></div></div></div><div class="panel"><div class="panel-head"><h2>Resultado de la cabecera</h2><div class="preview-tools"><button class="mini active" data-header-mode="preview">Vista</button><button class="mini" data-header-mode="source">Código</button><button class="mini tool-copy" id="header-copy">Copiar HTML</button><button class="mini tool-download" id="header-download">Descargar .md</button></div></div><iframe class="preview output-mode active" id="header-preview" title="Vista previa de cabecera"></iframe><textarea class="source output-mode" id="header-output" readonly wrap="off" spellcheck="false"></textarea><div class="audit" id="header-audit"></div></div></div></section>
 
-<section class="view" id="view-prompt"><div class="panel doc"><div class="panel-head"><h2>Prompt reutilizable para IA</h2><span class="badge">SIN RUTAS PERSONALES</span></div><div class="panel-body"><p class="hint">Este prompt exige la misma plantilla que los constructores y puede compartirse con cualquier compañero.</p><textarea id="prompt-output" class="prompt-area" readonly></textarea><div class="actions"><button class="btn cyan" id="prompt-copy">Copiar prompt</button><button class="btn primary" id="prompt-download">Descargar prompt</button></div></div></div></section>
+<section class="view" id="view-prompt"><div class="panel doc"><div class="panel-head"><h2>Prompts reutilizables para IA</h2><div class="prompt-tools"><button class="mini active" data-prompt-mode="markdown">Preparar Markdown</button><button class="mini" data-prompt-mode="html">Generar HTML</button></div><span class="badge">SIN RUTAS PERSONALES</span></div><div class="panel-body"><p class="hint" id="prompt-help">Prepara varios temas independientes en un Markdown que el constructor puede importar sin inflar el índice.</p><textarea id="prompt-output" class="prompt-area" readonly></textarea><div class="actions"><button class="btn cyan" id="prompt-copy">Copiar prompt</button><button class="btn primary" id="prompt-download">Descargar prompt</button></div></div></div></section>
 
 </main><div class="icon-dialog" id="icon-dialog" hidden><div class="icon-card" role="dialog" aria-modal="true" aria-labelledby="icon-dialog-title"><div class="icon-head"><strong id="icon-dialog-title">Insertar icono</strong><button class="mini" id="icon-close" type="button">Cerrar</button></div><p class="icon-help">Selecciona primero un campo de texto y después el icono. Se insertará justo donde esté el cursor.</p><div class="icon-grid" id="icon-grid"></div></div></div><div class="status" id="status"></div>
 <script>
@@ -41,6 +42,9 @@ const slug=v=>String(v||"documento").normalize("NFD").replace(/[\u0300-\u036f]/g
 const safeHref=v=>{const value=String(v||"#").trim();return /^(?:https?:\/\/|#|\/)/i.test(value)?esc(value):"#"};
 const safeMediaUrl=v=>{const value=String(v||"").trim();return /^https:\/\//i.test(value)?esc(value):""};
 const lines=v=>String(v||"").split(/\r?\n/).map(x=>x.trim()).filter(Boolean),parts=v=>lines(v).map(x=>x.split("|").map(y=>y.trim()));
+const rawOutput={theme:"",header:""};
+function formatCssSource(css){let level=0,quote="",paren=0,line="",result=[];const flush=()=>{const value=line.trim();if(value)result.push("  ".repeat(level)+value);line=""};for(let i=0;i<css.length;i++){const char=css[i],previous=css[i-1];if(quote){line+=char;if(char===quote&&previous!=="\\")quote="";continue}if(char==='"'||char==="'"){quote=char;line+=char;continue}if(char==="("){paren++;line+=char;continue}if(char===")"){paren=Math.max(0,paren-1);line+=char;continue}if(!paren&&char==="{"){line+=" {";flush();level++;continue}if(!paren&&char==="}"){flush();level=Math.max(0,level-1);result.push("  ".repeat(level)+"}");continue}if(!paren&&char===";"){line+=";";flush();continue}line+=char}flush();return result.join("\n")}
+function formatHtmlSource(html){const styles=[];const body=String(html||"").replace(/<style>([\s\S]*?)<\/style>/gi,(_,css)=>(styles.push(`<style>\n${formatCssSource(css)}\n</style>`),""));const tokens=body.replace(/>\s*</g,"><").match(/<[^>]+>|[^<]+/g)||[],voidTag=/^<(?:area|base|br|col|embed|hr|img|input|link|meta|param|source|track|wbr)\b/i;let level=0;const formatted=[];tokens.forEach(token=>{const value=token.trim();if(!value)return;if(/^<\//.test(value))level=Math.max(0,level-1);formatted.push("  ".repeat(level)+value);if(/^<[^!/][^>]*>$/.test(value)&&!/^<\//.test(value)&&!voidTag.test(value)&&!/\/\s*>$/.test(value))level++});return[...styles,formatted.join("\n")].filter(Boolean).join("\n\n")}
 const toast=m=>{const e=$("#status");e.textContent=m;e.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("show"),2200)};
 const iconChoices=["🏬","💳","🏷️","📊","🖥️","⚙️","🔍","📖","🧾","📋","📦","🚚","📱","🌐","🧩","🛠️","🔄","🔐","🌅","✅","⚠️","💡","🎯","📌"];
 let iconTarget=null;
@@ -75,7 +79,7 @@ function themeSectionId(client,section,index){return slug(client)+"-"+slug(secti
 function buildTheme(){const client=$("#theme-client").value,title=$("#theme-title").value,root=slug(client)+"-"+slug(title)+"-guide",sel="#"+root,main=slug(title),tags=$("#theme-tags").value.split(",").map(x=>x.trim()).filter(Boolean),highlights=parts($("#theme-highlights").value),stats=parts($("#theme-stats").value),videoUrl=safeMediaUrl($("#theme-video-url").value),videoTitle=$("#theme-video-title").value.trim()||"Video explicativo";const hero=`<div class="hero"><div class="eyebrow">${esc($("#theme-eyebrow").value)}</div><h1 id="${main}-main-title">${esc(title)}</h1><p class="lead">${esc($("#theme-subtitle").value)}</p>${tags.length?`<div class="hero-tags">${tags.map(x=>`<span class="hero-tag">${esc(x)}</span>`).join("")}</div>`:""}${highlights.length?`<div class="hero-highlights">${highlights.map(x=>`<div class="hero-highlight-item"><span class="hero-highlight-icon">✓</span><span><strong>${esc(x[0])}:</strong>${x[1]?` ${inline(x.slice(1).join(" | "))}`:""}</span></div>`).join("")}</div>`:""}</div>`;const video=videoUrl?`<div class="video-card"><div class="video-head"><span class="video-icon">▶</span><span>${esc(videoTitle)}</span></div><div class="video-frame"><iframe src="${videoUrl}" title="${esc(videoTitle)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>`:"";return css(sel)+`<div id="${root}"><div class="intro-grid${video?"":" single"}">${hero}${video}</div>${stats.length?`<div class="summary-cards">${stats.map(x=>`<div class="card"><div class="card-value">${esc(x[0])}</div><div class="card-label">${esc(x.slice(1).join(" | "))}</div></div>`).join("")}</div>`:""}<p class="hint">Selecciona el encabezado de una sección para expandirla o contraerla.</p>${theme.sections.map((s,i)=>{const id=themeSectionId(client,s,i);return`<details class="section" id="${id}"><summary><span class="section-number">${String(i+1).padStart(2,"0")}</span><span class="section-header-text"><h2 class="section-title" id="${id}-title">${esc(s.title)}</h2><span class="section-subtitle">${esc(s.subtitle)}</span></span><span class="section-arrow">›</span></summary><div class="section-body">${s.blocks.map((b,j)=>blockHtml(b,id,j)).join("")}</div></details>`}).join("")}</div>`}
 function audit(html){const result=[];result.push([/^\s*<style>/i.test(html),"Comienza con STYLE"]);result.push([!/<script\b/i.test(html),"Sin JavaScript"]);result.push([!/<h[4-6]\b/i.test(html),"Jerarquía H1-H3"]);result.push([!/<details[^>]*class="section"[^>]*\sopen/i.test(html),"Temas cerrados"]);const ids=[...html.matchAll(/\bid="([^"]+)"/gi)].map(x=>x[1]);result.push([new Set(ids).size===ids.length,"IDs únicos"]);const colors=[...html.matchAll(/#[0-9a-f]{6}/gi)].map(x=>x[0].toLowerCase());result.push([colors.every(x=>palette.map(y=>y.toLowerCase()).includes(x)),"Paleta controlada"]);return result}
 function showAudit(id,html){$(id).innerHTML=audit(html).map(([ok,t])=>`<span class="check ${ok?"":"bad"}">${ok?"✓":"!"} ${t}</span>`).join("")}
-function renderTheme(){const html=preservedImport.theme||buildTheme();$("#theme-output").value=html;$("#theme-preview").srcdoc=`<!doctype html><meta charset="utf-8">${html}`;showAudit("#theme-audit",html);localStorage.setItem("sl-theme",JSON.stringify({fields:themeFields(),sections:theme.sections}))}
+function renderTheme(){const html=preservedImport.theme||buildTheme();rawOutput.theme=html;$("#theme-output").value=formatHtmlSource(html);$("#theme-preview").srcdoc=`<!doctype html><meta charset="utf-8">${html}`;showAudit("#theme-audit",html);localStorage.setItem("sl-theme",JSON.stringify({fields:themeFields(),sections:theme.sections}))}
 function themeFields(){return["theme-client","theme-eyebrow","theme-title","theme-subtitle","theme-tags","theme-highlights","theme-video-title","theme-video-url","theme-stats"].reduce((a,id)=>(a[id]=$("#"+id).value,a),{})}
 function parseMarkdown(text){const raw=text.replace(/<!--[^]*?-->/g,"").split(/\r?\n/),title=(raw.find(x=>/^#\s+/.test(x))||"# Tema importado").replace(/^#\s+/,"").trim(),sections=[];let current=null,buffer=[],list=[];const flush=()=>{if(!current)return;if(buffer.length){current.blocks.push(newBlock("paragraph",buffer.join("\n").trim()));buffer=[]}if(list.length){current.blocks.push(newBlock("list",list.join("\n")));list=[]}};for(let i=0;i<raw.length;i++){const line=raw[i].trim();if(/^##\s+/.test(line)){flush();current=newSection(line.replace(/^##\s+/,""));current.blocks=[];sections.push(current);continue}if(/^#{3,}\s+/.test(line)&&current){flush();current.blocks.push(newBlock("subtitle",line.replace(/^#{3,}\s+/,"")));continue}if(!current)continue;if(/^\|.*\|$/.test(line)&&i+1<raw.length&&/^\|?\s*:?-+/.test(raw[i+1].trim())){flush();const headers=line.split("|").map(x=>x.trim()).filter(Boolean);i+=2;const rows=[];while(i<raw.length&&/^\|.*\|$/.test(raw[i].trim())){rows.push(raw[i].split("|").map(x=>x.trim()).filter(Boolean).join(" | "));i++}i--;const b=newBlock("table",rows.join("\n"));b.extra=headers.join(" | ");current.blocks.push(b);continue}if(/^[-*]\s+/.test(line)){if(buffer.length)flush();list.push(line);continue}if(!line){flush();continue}if(!/^- (URL|Exportado):/i.test(line)&&line!=="---"&&!/Sin contenido tecnico exportable/i.test(line))buffer.push(line)}flush();return{title,sections:sections.filter(s=>s.blocks.length)}}
 function parseHtml(text){
@@ -107,9 +111,149 @@ function buildHeaderWithImage(){
  const accountGrid=accountCount?`<div class="account-grid"${accountCount===1?' style="grid-template-columns:1fr"':""}>${contextCard}${directory}</div>`:"";
  return headerCss(sel)+`<div id="${root}"><div class="hero"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span>${esc($("#header-eyebrow").value)}</div><div class="hero-title">${esc(client)}</div><p class="hero-lead">${esc($("#header-subtitle").value)}</p><div class="tags">${tags.map(x=>`<span class="tag">${esc(x)}</span>`).join("")}</div></div><div class="brand-zone">${brand}</div></div>${accountGrid}<details class="content-index" open><summary><span class="index-icon">☰</span><span class="index-heading"><span class="index-title">Índice del contenido</span><span class="index-subtitle">Navegación directa por los módulos y secciones de esta página</span></span><span class="index-arrow">›</span></summary><div class="index-grid">${modules}</div></details></div>`
 }
-function renderHeader(){const html=preservedImport.header||buildHeaderWithImage();$("#header-output").value=html;$("#header-preview").srcdoc=`<!doctype html><meta charset="utf-8">${html}`;showAudit("#header-audit",html);try{localStorage.setItem("sl-header",JSON.stringify(headerFields()))}catch{toast("La cabecera se generó, pero la imagen es demasiado grande para guardarse localmente")}}
+function renderHeader(){const html=preservedImport.header||buildHeaderWithImage();rawOutput.header=html;$("#header-output").value=formatHtmlSource(html);$("#header-preview").srcdoc=`<!doctype html><meta charset="utf-8">${html}`;showAudit("#header-audit",html);try{localStorage.setItem("sl-header",JSON.stringify(headerFields()))}catch{toast("La cabecera se generó, pero la imagen es demasiado grande para guardarse localmente")}}
 function headerFields(){const fields=["header-client","header-eyebrow","header-subtitle","header-tags","header-image-alt","header-context","header-history","header-relations","header-links","header-index"].reduce((a,id)=>(a[id]=$("#"+id).value,a),{});fields._imageData=headerImage.data;fields._imageName=headerImage.name;return fields}
 const PROMPT=`ACTÚA COMO DISEÑADOR Y EDITOR TÉCNICO DE DOCUMENTACIÓN PARA SHARELINKS.\n\nENTRADA\nProyecto o cliente: [NOMBRE]\nTítulo: [TÍTULO]\nSubtítulo: [DESCRIPCIÓN]\nFuentes: [PEGAR TEXTO O ADJUNTAR ARCHIVOS]\nTipo de salida: [TEMA HTML / CABECERA DE CLIENTE]\n\nREGLAS OBLIGATORIAS\n1. Conserva toda la información fuente: no resumas ni elimines tablas, listas, rutas, comandos, ejemplos, notas, advertencias, cifras, fechas o identificadores.\n2. Genera un archivo .md cuyo contenido sea exclusivamente CSS y HTML y comience directamente con <style>.\n3. No uses JavaScript, librerías ni fuentes externas. Solo se permite una URL externa cuando la fuente proporciona explícitamente un video o enlace documental.\n4. Encapsula todo bajo un ID único derivado del proyecto; no uses reglas globales.\n5. Usa el sistema visual vigente de la página Costco: navy #002233, cyan #00DBFF, purple #A44DFF, orange #FF8900, gradiente 130deg y neutros institucionales. No inventes colores.\n6. Tipografía Verdana, Geneva, sans-serif; código Consolas, "Courier New", monospace.\n7. En temas, el hero usa padding 48px 34px 36px, eyebrow cyan, etiquetas .hero-tag con icono textual y bloque .hero-highlights con checks cyan cuando existan datos.\n8. Los indicadores usan .summary-cards; las secciones principales usan <details class="section"> cerrados; el summary lleva fondo navy, círculo cyan, H2 blanco, subtítulo cyan y flecha.\n9. Jerarquía: un H1 en el hero, H2 en cada summary y H3 class="sub-title" para subtítulos internos. No uses H4-H6.\n10. Tarjetas .feature-grid/.feature-card, pasos .step-list/.step-item, notas .note-box, ideas .purple-box, advertencias .warning-box y tablas dentro de .table-wrap.\n11. IDs únicos, sin acentos ni espacios. Cada details, H2 y H3 debe tener su propio ID.\n12. Los TH fuerzan background:#002233!important y color:#ffffff!important.\n13. Incluye responsive para 760px y 440px en temas; 900px y 650px en cabeceras.\n14. Antes de entregar valida: inicio STYLE, CSS encapsulado, cero scripts, cero H4-H6, IDs únicos, temas cerrados, paleta bloqueada y tablas homologadas.\n\nSI EL TIPO ES CABECERA\nReplica la estructura vigente: hero con punto cyan antes del descriptor; logo dentro de tarjeta blanca a la derecha; contexto con icono ◆; soluciones en tres tarjetas; directorio con icono →, numeración 01-06; e índice abierto con icono ☰, tarjetas de módulo y subenlaces. Si se proporciona imagen, incrústala como data URL con texto alternativo; nunca uses rutas locales.\n\nSI EL TIPO ES TEMA HTML\nIncluye hero, etiquetas con iconos si la fuente las proporciona, resaltados con ✓, video solo si existe URL proporcionada, indicadores solo si existen y todas las secciones en acordeones.\n\nENTREGA\nDevuelve únicamente el contenido final del archivo, empezando por <style>.`;
+const PROMPT_MARKDOWN=`Necesito generar un archivo Markdown compatible con el Constructor de ShareLinks.
+
+CATEGORÍA PRINCIPAL:
+Referencia Técnica: Guía de mensajes
+
+TEMAS INCLUIDOS:
+1. Catálogo/Guía de diagnóstico POS
+2. Catálogo/Guía de diagnóstico Bridge Core
+
+IMPORTANTE:
+Estos son 2 temas independientes de una categoría que tendrá 5 temas en total.
+No combines POS y Bridge Core en un solo tema.
+No incluyas NotebookLM.
+No inventes ni agregues los otros temas que todavía no fueron proporcionados.
+
+FUENTES:
+- [ADJUNTAR O PEGAR LA DOCUMENTACIÓN DE DIAGNÓSTICO POS]
+- [ADJUNTAR O PEGAR LA DOCUMENTACIÓN DE DIAGNÓSTICO BRIDGE CORE]
+
+OBJETIVO:
+Reorganiza toda la información de las fuentes en un único archivo Markdown importable, conservando POS y Bridge Core como dos cuerpos o módulos independientes.
+
+JERARQUÍA OBLIGATORIA:
+
+# Referencia Técnica: Guía de mensajes
+
+## Catálogo/Guía de diagnóstico POS
+
+### Objetivo y contexto
+
+**Objetivo**
+
+[Contenido]
+
+**Contexto general**
+
+[Contenido]
+
+### Datos iniciales del incidente
+
+[Contenido]
+
+### Dónde consultar la evidencia
+
+[Contenido]
+
+### Cómo analizar la evidencia
+
+[Contenido]
+
+### Aplicación en Costco
+
+[Contenido]
+
+### Consideraciones importantes
+
+[Contenido]
+
+### Idea clave
+
+[Contenido]
+
+### Glosario
+
+[Contenido]
+
+## Catálogo/Guía de diagnóstico Bridge Core
+
+### Objetivo y contexto
+
+**Objetivo**
+
+[Contenido]
+
+**Contexto general**
+
+[Contenido]
+
+### Datos iniciales del incidente
+
+[Contenido]
+
+### Dónde consultar la evidencia
+
+[Contenido]
+
+### Cómo analizar la evidencia
+
+[Contenido]
+
+### Aplicación en Costco
+
+[Contenido]
+
+### Consideraciones importantes
+
+[Contenido]
+
+### Idea clave
+
+[Contenido]
+
+### Glosario
+
+[Contenido]
+
+REGLAS DE ESTRUCTURA:
+
+1. Debe existir exactamente un encabezado de nivel 1: # Referencia Técnica: Guía de mensajes.
+2. Deben existir exactamente dos encabezados de nivel 2: uno para POS y otro para Bridge Core.
+3. El constructor utiliza los encabezados de nivel 2 para crear el índice; por lo tanto, debe mostrar solamente 2 tarjetas.
+4. Todas las divisiones internas de cada tema deben utilizar encabezados de nivel 3.
+5. Los subtítulos menores deben escribirse en negritas.
+6. No conviertas Objetivo, Contexto general, Información requerida u otros apartados menores en encabezados de nivel 2.
+7. No generes manualmente una sección llamada Índice. El constructor la creará automáticamente.
+8. No unas los nombres en un título como Guía de diagnóstico POS y Bridge Core.
+9. Conserva íntegramente párrafos, listas, tablas, rutas, nombres de archivos, mensajes, procedimientos, advertencias, términos técnicos y datos por validar.
+10. No resumas ni elimines información respaldada por las fuentes.
+11. No inventes versiones, rutas, componentes, procesos o conclusiones.
+12. Si falta información, escribe Por validar.
+13. Usa únicamente Markdown estándar. No agregues HTML, CSS, JavaScript ni bloques style.
+14. No escribas introducciones fuera del documento ni explicaciones posteriores.
+
+CONTROL FINAL:
+
+Antes de entregar, confirma internamente que:
+- Hay 1 encabezado #.
+- Hay exactamente 2 encabezados ##.
+- POS y Bridge Core permanecen separados.
+- Las secciones internas utilizan ###.
+- No aparece NotebookLM.
+- No se creó un tercer tema.
+- Ninguna tabla o lista fue eliminada.
+- El resultado está listo para importarse directamente en el Constructor de ShareLinks.
+
+ENTREGA:
+Devuelve exclusivamente el contenido Markdown final, comenzando con:
+# Referencia Técnica: Guía de mensajes`;
+let promptMode="markdown";
+function renderPrompt(){const markdown=promptMode==="markdown",value=markdown?PROMPT_MARKDOWN:PROMPT;$("#prompt-output").value=value;$("#prompt-help").textContent=markdown?"Prepara varios temas independientes en un Markdown que el constructor puede importar sin inflar el índice.":"Genera directamente el CSS y HTML restringido con el diseño institucional.";$$('[data-prompt-mode]').forEach(button=>button.classList.toggle("active",button.dataset.promptMode===promptMode))}
 function setModes(prefix,mode){$$(`[data-${prefix}-mode]`).forEach(b=>b.classList.toggle("active",b.dataset[prefix+"Mode"]===mode));const preview=$("#"+prefix+"-preview"),output=$("#"+prefix+"-output");preview.classList.toggle("active",mode==="preview");output.classList.toggle("active",mode==="source")}
 $$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${b.dataset.view}`))});
 $("#add-section").onclick=()=>{theme.sections.push(newSection());renderEditors()};$("#theme-example").onclick=()=>{$("#theme-eyebrow").value="DOCUMENTACIÓN TÉCNICA NAPSE · COSTCO WHOLESALE";$("#theme-title").value="Visión General - Cuenta y Operaciones de Costco";$("#theme-subtitle").value="Compilación técnica integral: modelo de negocio, metodología de estudio de la cuenta y panorama operativo transaccional.";$("#theme-tags").value="🏬 Warehouse Club, 💳 Membresías Personal & Negocio, 🏷️ Kirkland Signature, 📊 4 Perspectivas de Análisis";$("#theme-highlights").value="Modelo Comercial | Selección limitada, alto volumen, rotación acelerada y cuota de membresía.\nOperación POS | Integración end-to-end entre cajas, áreas especializadas, servicios de fondo y AS400.";$("#theme-stats").value="933 | Sucursales Globales\n43 | Sucursales en México\n4 | Perspectivas de Análisis\n6 | Bloques Operativos";theme.sections=[newSection("Qué es Costco: Visión General y Modelo de Negocio"),newSection("Aprende del Cliente de tu Asignación"),newSection("Operaciones que Realiza Costco: Panorama Operativo")];theme.sections[1].blocks=[newBlock("steps","Proceso | Ubicar el paso exacto, el usuario y el resultado esperado.\nRegla | Identificar datos de entrada, condiciones, cálculos y autorizaciones.\nEvidencia | Comparar display, ticket, Journal y TLOG."),(()=>{const b=newBlock("table","POS | Punto de venta | Operación\nVTOL | Pagos | Autorización");b.extra="Componente | Función | Resultado";return b})()];renderEditors()};
@@ -122,9 +266,9 @@ $("#theme-file").onchange=async e=>{const f=e.target.files[0];if(!f)return;const
 $("#header-image").onchange=async event=>{const file=event.target.files[0];if(!file)return;try{releasePreserved("header");headerImage={data:await optimizeHeaderImage(file),name:file.name};updateHeaderImageControl();renderHeader();toast("Imagen optimizada e incrustada en la cabecera")}catch(error){event.target.value="";toast(error.message||"No se pudo procesar la imagen")}};
 $("#header-image-remove").onclick=()=>{releasePreserved("header");headerImage={data:"",name:""};$("#header-image").value="";updateHeaderImageControl();renderHeader();toast("Imagen eliminada")};
 $$('[data-theme-mode]').forEach(b=>b.onclick=()=>setModes('theme',b.dataset.themeMode));$$('[data-header-mode]').forEach(b=>b.onclick=()=>setModes('header',b.dataset.headerMode));
-$("#theme-copy").onclick=()=>copy($("#theme-output").value);$("#header-copy").onclick=()=>copy($("#header-output").value);$("#theme-download").onclick=()=>download(slug($("#theme-title").value)+"_HTML.md",$("#theme-output").value);$("#header-download").onclick=()=>download(slug($("#header-client").value)+"_CABECERA.md",$("#header-output").value);
+$("#theme-copy").onclick=()=>copy(rawOutput.theme);$("#header-copy").onclick=()=>copy(rawOutput.header);$("#theme-download").onclick=()=>download(slug($("#theme-title").value)+"_HTML.md",rawOutput.theme);$("#header-download").onclick=()=>download(slug($("#header-client").value)+"_CABECERA.md",rawOutput.header);
 $("#header-example").onclick=()=>{$("#header-client").value="Costco";$("#header-eyebrow").value="CLIENTE · DOCUMENTACIÓN TÉCNICA NAPSE";$("#header-subtitle").value="Centro de documentación para la operación, arquitectura, integraciones y soluciones implementadas para Costco México.";$("#header-tags").value="Punto de venta, VTOL, Pre Scan, Bridge Mobile";$("#header-image-alt").value="Logo de Costco Wholesale";$("#header-context").value="Napse es un proveedor tecnológico clave para Costco México, apoyando en la transformación digital de puntos de venta, proveyendo el gateway de pago VTOL y soluciones de movilidad, como el sistema “Pre Scan” para agilizar el cobro en filas y procesar diversas formas de pago, optimizando la experiencia en tienda.";$("#header-history").value="Napse ha trabajado con Costco desde hace años, siendo uno de sus primeros clientes internacionales y actualizando continuamente la tecnología de pago conforme aparecen nuevas formas de consumo.";$("#header-relations").value="VTOL · Gateway de pagos | Gestiona tarjetas, pagos de servicios y billeteras digitales en un único punto, reduciendo errores humanos.\nPre Scan · Movilidad | Bridge Mobile permite escanear productos antes de llegar a caja y reducir los tiempos de espera.\nTransformación digital | Centraliza la gestión del punto de venta y ayuda a agilizar la operación de las filas.";$("#header-links").value="Manuales de usuario | Operación, interacción con POS e integraciones. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Manuales+de+Usuario\nInstalación y configuración | Documentación específica de implementación. | https://share.linx.com.br/pages/viewpage.action?pageId=647157328\nReferencia técnica | Arquitectura, parámetros e integraciones. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Referencia+Tecnica\nProyectos y PC | Alcance, diseño, calidad y entrega. | https://share.linx.com.br/pages/viewpage.action?pageId=647157331\nOtros documentos | Material histórico pendiente de clasificación. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Otros\nBase técnica | Consulta técnica complementaria de la cuenta. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Nestor+-+Base+Tecnica";$("#header-index").value="Visión General - Cuenta y Operaciones | costco-tema1-guide | Qué es Costco > que-es-costco; Aprende del cliente > aprende-del-cliente; Operaciones que realiza Costco > operaciones-costco\nUn Día en la Operación de Costco | costco-tema4-guide | El ciclo de la jornada > ciclo-jornada; Preparación antes de la apertura > preparacion-apertura; Operación durante el día > operacion-dia; Cierre de tienda > cierre-tienda\nArquitectura y Reglas de Negocio | costco-tema3-1-guide | Arquitectura del cliente > arquitectura-costco; Reglas de negocio > reglas-de-negocio; Prueba de reglas > metodologia-pruebas\nDispositivos y Plataforma POS | costco-tema3-2-guide | Periféricos > sec-dispositivos; Matriz operativa > sec-matriz; Toshiba 4690 OS > sec-sistema-operativo\nDefiniciones Base - Glosario Técnico | costco-glosario-guide | Objetivo > objetivo-glosario; Componentes POS > componentes-pos; Gestión de incidencias > reporte-incidencias";renderHeader()};$("#header-reset").onclick=()=>{localStorage.removeItem("sl-header");location.reload()};
-$("#prompt-output").value=PROMPT;$("#prompt-copy").onclick=()=>copy(PROMPT);$("#prompt-download").onclick=()=>download("PROMPT_SHARELINKS_HTML_RESTRINGIDO.md",PROMPT);
+$$('[data-prompt-mode]').forEach(button=>button.onclick=()=>{promptMode=button.dataset.promptMode;renderPrompt()});renderPrompt();$("#prompt-copy").onclick=()=>copy(promptMode==="markdown"?PROMPT_MARKDOWN:PROMPT);$("#prompt-download").onclick=()=>download(promptMode==="markdown"?"PROMPT_MARKDOWN_SHARELINKS.md":"PROMPT_SHARELINKS_HTML_RESTRINGIDO.md",promptMode==="markdown"?PROMPT_MARKDOWN:PROMPT);
 try{const saved=JSON.parse(localStorage.getItem("sl-theme"));if(saved){Object.entries(saved.fields||{}).forEach(([id,v])=>{if($("#"+id))$("#"+id).value=v});theme.sections=saved.sections||[]}}catch{}if(!theme.sections.length)theme.sections=[newSection("Objetivo y alcance")];try{const saved=JSON.parse(localStorage.getItem("sl-header"));headerImage={data:/^data:image\/(?:webp|png);base64,/i.test(saved?._imageData||"")?saved._imageData:"",name:saved?._imageName||""};Object.entries(saved||{}).forEach(([id,v])=>{if($("#"+id))$("#"+id).value=v})}catch{}updateHeaderImageControl();renderEditors();renderHeader();
 })();
 </script>
