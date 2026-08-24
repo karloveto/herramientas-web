@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ShareLinks Studio - Constructores restringidos</title>
+<title>ShareLinx Studio - Constructores restringidos</title>
 <style>
 :root{--navy:#002233;--cyan:#00dbff;--purple:#a44dff;--orange:#ff8900;--ink:#183247;--muted:#647985;--line:#d9e3e8;--ice:#eef6f8;--bg:#f4f8fa;--white:#fff}*{box-sizing:border-box}html{color-scheme:light}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Verdana,Geneva,sans-serif}.top{display:flex;align-items:center;gap:16px;padding:18px 24px;background:var(--navy);color:#fff;box-shadow:0 6px 24px rgba(0,34,51,.18)}.logo{display:grid;width:42px;height:42px;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--cyan));font-weight:900}.top-copy{flex:1}.top h1{margin:0;font-size:19px}.top p{margin:2px 0 0;color:#bcecf3;font-size:11px}.editor-link{padding:9px 13px;border:1px solid rgba(255,255,255,.3);border-radius:9px;color:#fff;text-decoration:none;font-size:11px;font-weight:bold}.tabs{position:sticky;top:0;z-index:5;display:flex;gap:8px;padding:10px 24px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.96);backdrop-filter:blur(8px)}button,.button{font:inherit}.tab,.btn{border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--navy);cursor:pointer;font-size:11px;font-weight:bold}.tab{padding:9px 13px}.tab.active{border-color:var(--navy);background:var(--navy);color:#fff}.app{max-width:1600px;margin:auto;padding:18px}.view{display:none}.view.active{display:block}.builder{display:grid;grid-template-columns:minmax(420px,.9fr) minmax(520px,1.1fr);gap:16px}.panel{overflow:hidden;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:0 5px 18px rgba(0,34,51,.05)}.panel-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);background:#fbfdfe}.panel-head h2{flex:1;margin:0;color:var(--navy);font-size:14px}.badge{padding:4px 8px;border-radius:999px;background:#eee3ff;color:#7623bd;font-size:9px;font-weight:bold}.panel-body{padding:16px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{color:#405766;font-size:10px;font-weight:bold}.field small{color:var(--muted);font-size:9px}input,textarea,select{width:100%;border:1px solid #cddbe2;border-radius:8px;background:#fff;color:var(--ink);font:12px/1.45 Verdana,Geneva,sans-serif;outline:none}input,select{height:36px;padding:7px 9px}textarea{min-height:74px;padding:9px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(164,77,255,.1)}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.btn{padding:9px 12px}.btn.primary{border-color:var(--purple);background:var(--purple);color:#fff}.btn.cyan{border-color:var(--cyan);background:var(--cyan);color:var(--navy)}.btn.danger{color:#a33}.btn:disabled{cursor:not-allowed;opacity:.45}.hint{padding:10px 12px;border-left:4px solid var(--cyan);border-radius:0 8px 8px 0;background:var(--ice);color:#4e6572;font-size:10px}.import-box{margin-bottom:14px;padding:12px;border:1px dashed #b9cad2;border-radius:10px;background:#fbfdfe}.section-editor{margin-top:11px;border:1px solid var(--line);border-radius:11px}.section-head{display:flex;align-items:center;gap:8px;padding:10px;background:var(--navy);color:#fff}.section-head strong{flex:1;font-size:11px}.section-body{padding:11px}.block{margin-top:9px;padding:10px;border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:8px;background:#fff}.block-top{display:flex;align-items:center;gap:8px;margin-bottom:8px}.block-top strong{flex:1;color:var(--navy);font-size:10px}.mini{padding:4px 7px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--navy);cursor:pointer;font-size:9px}.preview-tools{display:flex;gap:7px}.preview{width:100%;height:720px;border:0;background:#fff}.source{width:100%;height:720px;border:0;border-radius:0;background:#071b27;color:#d8f5fa;font:11px/1.55 Consolas,"Courier New",monospace;white-space:pre;resize:none}.output-mode{display:none}.output-mode.active{display:block}.audit{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(--line);background:#fbfdfe}.check{padding:4px 7px;border-radius:999px;background:#e9f8ef;color:#17683c;font-size:9px;font-weight:bold}.check.bad{background:#fff0e3;color:#9b4b00}.empty{padding:26px;text-align:center;color:var(--muted);font-size:11px}.prompt-area{min-height:620px;font:11px/1.55 Consolas,"Courier New",monospace}.doc{max-width:1000px;margin:auto}.doc h2{color:var(--navy);font-size:20px}.doc h3{margin-top:24px;color:var(--purple);font-size:14px}.doc code{padding:2px 5px;border-radius:4px;background:var(--ice);font-family:Consolas,monospace}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.roadmap article{padding:15px;border:1px solid var(--line);border-top:4px solid var(--purple);border-radius:10px;background:#fff}.roadmap article:nth-child(2){border-top-color:var(--cyan)}.roadmap article:nth-child(3){border-top-color:var(--orange)}.roadmap strong{display:block;color:var(--navy);font-size:12px}.roadmap p{font-size:10px}.status{position:fixed;right:18px;bottom:18px;z-index:20;max-width:340px;padding:11px 14px;border-radius:9px;background:var(--navy);color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.2);font-size:10px;opacity:0;transform:translateY(8px);transition:.2s;pointer-events:none}.status.show{opacity:1;transform:none}@media(max-width:1050px){.builder{grid-template-columns:1fr}.preview,.source{height:600px}}@media(max-width:700px){.top{padding:14px}.editor-link{display:none}.tabs{overflow:auto;padding:9px 12px}.app{padding:10px}.form-grid,.roadmap{grid-template-columns:1fr}.field.full{grid-column:auto}}
 </style>
@@ -12,7 +12,7 @@
 <style>.preview-tools{align-items:center;flex-wrap:wrap}.mini.tool-copy{border-color:var(--cyan);background:var(--cyan);color:var(--navy)}.mini.tool-download{border-color:var(--purple);background:var(--purple);color:#fff}.source{padding:18px;tab-size:2;white-space:pre;overflow:auto}.prompt-tools{display:flex;gap:7px}.prompt-tools .active{border-color:var(--navy);background:var(--navy);color:#fff}@media(max-width:700px){.panel-head{align-items:flex-start;flex-wrap:wrap}.panel-head h2{min-width:100%}.preview-tools{width:100%}}</style>
 </head>
 <body>
-<header class="top"><div class="logo">SL</div><div class="top-copy"><h1>ShareLinks Studio</h1><p>Constructores guiados con diseño institucional bloqueado</p></div><div class="top-actions"><span class="top-import-status" id="import-result" hidden></span><input id="theme-file" type="file" accept=".md,.txt,.html,.htm,text/markdown,text/plain,text/html" hidden><button class="editor-link import-page" id="page-import-button" type="button">Importar página completa</button><a class="editor-link" href="editor.html">Abrir editor avanzado</a></div></header>
+<header class="top"><div class="logo">SL</div><div class="top-copy"><h1>ShareLinx Studio</h1><p>Constructores guiados con diseño institucional bloqueado</p></div><div class="top-actions"><span class="top-import-status" id="import-result" hidden></span><input id="theme-file" type="file" accept=".md,.txt,.html,.htm,text/markdown,text/plain,text/html" hidden><button class="editor-link import-page" id="page-import-button" type="button">Importar página completa</button><a class="editor-link" href="editor.html">Abrir editor avanzado</a></div></header>
 <nav class="tabs" aria-label="Módulos"><button class="tab active" data-view="tema">Constructor de tema</button><button class="tab" data-view="cabecera">Constructor de cabecera</button><button class="tab" data-view="prompt">Prompt para IA</button></nav>
 <main class="app">
 <section class="view active" id="view-tema"><div class="builder"><div class="panel"><div class="panel-head"><h2>Contenido del tema</h2><span class="badge">DISEÑO BLOQUEADO</span></div><div class="panel-body">
@@ -113,147 +113,94 @@ function buildHeaderWithImage(){
 }
 function renderHeader(){const html=preservedImport.header||buildHeaderWithImage();rawOutput.header=html;$("#header-output").value=formatHtmlSource(html);$("#header-preview").srcdoc=`<!doctype html><meta charset="utf-8">${html}`;showAudit("#header-audit",html);try{localStorage.setItem("sl-header",JSON.stringify(headerFields()))}catch{toast("La cabecera se generó, pero la imagen es demasiado grande para guardarse localmente")}}
 function headerFields(){const fields=["header-client","header-eyebrow","header-subtitle","header-tags","header-image-alt","header-context","header-history","header-relations","header-links","header-index"].reduce((a,id)=>(a[id]=$("#"+id).value,a),{});fields._imageData=headerImage.data;fields._imageName=headerImage.name;return fields}
-const PROMPT=`ACTÚA COMO DISEÑADOR Y EDITOR TÉCNICO DE DOCUMENTACIÓN PARA SHARELINKS.\n\nENTRADA\nProyecto o cliente: [NOMBRE]\nTítulo: [TÍTULO]\nSubtítulo: [DESCRIPCIÓN]\nFuentes: [PEGAR TEXTO O ADJUNTAR ARCHIVOS]\nTipo de salida: [TEMA HTML / CABECERA DE CLIENTE]\n\nREGLAS OBLIGATORIAS\n1. Conserva toda la información fuente: no resumas ni elimines tablas, listas, rutas, comandos, ejemplos, notas, advertencias, cifras, fechas o identificadores.\n2. Genera un archivo .md cuyo contenido sea exclusivamente CSS y HTML y comience directamente con <style>.\n3. No uses JavaScript, librerías ni fuentes externas. Solo se permite una URL externa cuando la fuente proporciona explícitamente un video o enlace documental.\n4. Encapsula todo bajo un ID único derivado del proyecto; no uses reglas globales.\n5. Usa el sistema visual vigente de la página Costco: navy #002233, cyan #00DBFF, purple #A44DFF, orange #FF8900, gradiente 130deg y neutros institucionales. No inventes colores.\n6. Tipografía Verdana, Geneva, sans-serif; código Consolas, "Courier New", monospace.\n7. En temas, el hero usa padding 48px 34px 36px, eyebrow cyan, etiquetas .hero-tag con icono textual y bloque .hero-highlights con checks cyan cuando existan datos.\n8. Los indicadores usan .summary-cards; las secciones principales usan <details class="section"> cerrados; el summary lleva fondo navy, círculo cyan, H2 blanco, subtítulo cyan y flecha.\n9. Jerarquía: un H1 en el hero, H2 en cada summary y H3 class="sub-title" para subtítulos internos. No uses H4-H6.\n10. Tarjetas .feature-grid/.feature-card, pasos .step-list/.step-item, notas .note-box, ideas .purple-box, advertencias .warning-box y tablas dentro de .table-wrap.\n11. IDs únicos, sin acentos ni espacios. Cada details, H2 y H3 debe tener su propio ID.\n12. Los TH fuerzan background:#002233!important y color:#ffffff!important.\n13. Incluye responsive para 760px y 440px en temas; 900px y 650px en cabeceras.\n14. Antes de entregar valida: inicio STYLE, CSS encapsulado, cero scripts, cero H4-H6, IDs únicos, temas cerrados, paleta bloqueada y tablas homologadas.\n\nSI EL TIPO ES CABECERA\nReplica la estructura vigente: hero con punto cyan antes del descriptor; logo dentro de tarjeta blanca a la derecha; contexto con icono ◆; soluciones en tres tarjetas; directorio con icono →, numeración 01-06; e índice abierto con icono ☰, tarjetas de módulo y subenlaces. Si se proporciona imagen, incrústala como data URL con texto alternativo; nunca uses rutas locales.\n\nSI EL TIPO ES TEMA HTML\nIncluye hero, etiquetas con iconos si la fuente las proporciona, resaltados con ✓, video solo si existe URL proporcionada, indicadores solo si existen y todas las secciones en acordeones.\n\nENTREGA\nDevuelve únicamente el contenido final del archivo, empezando por <style>.`;
-const PROMPT_MARKDOWN=`Necesito generar un archivo Markdown compatible con el Constructor de ShareLinks.
+const PROMPT=`ACTÚA COMO DISEÑADOR Y EDITOR TÉCNICO DE DOCUMENTACIÓN PARA SHARELINX.\n\nENTRADA\nProyecto o cliente: [NOMBRE]\nTítulo: [TÍTULO]\nSubtítulo: [DESCRIPCIÓN]\nFuentes: [PEGAR TEXTO O ADJUNTAR ARCHIVOS]\nTipo de salida: [TEMA HTML / CABECERA DE CLIENTE]\n\nREGLAS OBLIGATORIAS\n1. Conserva toda la información fuente: no resumas ni elimines tablas, listas, rutas, comandos, ejemplos, notas, advertencias, cifras, fechas o identificadores.\n2. Genera un archivo .md cuyo contenido sea exclusivamente CSS y HTML y comience directamente con <style>.\n3. No uses JavaScript, librerías ni fuentes externas. Solo se permite una URL externa cuando la fuente proporciona explícitamente un video o enlace documental.\n4. Encapsula todo bajo un ID único derivado del proyecto; no uses reglas globales.\n5. Usa el sistema visual vigente de la página Costco: navy #002233, cyan #00DBFF, purple #A44DFF, orange #FF8900, gradiente 130deg y neutros institucionales. No inventes colores.\n6. Tipografía Verdana, Geneva, sans-serif; código Consolas, "Courier New", monospace.\n7. En temas, el hero usa padding 48px 34px 36px, eyebrow cyan, etiquetas .hero-tag con icono textual y bloque .hero-highlights con checks cyan cuando existan datos.\n8. Los indicadores usan .summary-cards; las secciones principales usan <details class="section"> cerrados; el summary lleva fondo navy, círculo cyan, H2 blanco, subtítulo cyan y flecha.\n9. Jerarquía: un H1 en el hero, H2 en cada summary y H3 class="sub-title" para subtítulos internos. No uses H4-H6.\n10. Tarjetas .feature-grid/.feature-card, pasos .step-list/.step-item, notas .note-box, ideas .purple-box, advertencias .warning-box y tablas dentro de .table-wrap.\n11. IDs únicos, sin acentos ni espacios. Cada details, H2 y H3 debe tener su propio ID.\n12. Los TH fuerzan background:#002233!important y color:#ffffff!important.\n13. Incluye responsive para 760px y 440px en temas; 900px y 650px en cabeceras.\n14. Antes de entregar valida: inicio STYLE, CSS encapsulado, cero scripts, cero H4-H6, IDs únicos, temas cerrados, paleta bloqueada y tablas homologadas.\n\nSI EL TIPO ES CABECERA\nReplica la estructura vigente: hero con punto cyan antes del descriptor; logo dentro de tarjeta blanca a la derecha; contexto con icono ◆; soluciones en tres tarjetas; directorio con icono →, numeración 01-06; e índice abierto con icono ☰, tarjetas de módulo y subenlaces. Si se proporciona imagen, incrústala como data URL con texto alternativo; nunca uses rutas locales.\n\nSI EL TIPO ES TEMA HTML\nIncluye hero, etiquetas con iconos si la fuente las proporciona, resaltados con ✓, video solo si existe URL proporcionada, indicadores solo si existen y todas las secciones en acordeones.\n\nENTREGA\nDevuelve únicamente el contenido final del archivo, empezando por <style>.`;
+const PROMPT_MARKDOWN_GENERIC=`Necesito generar un archivo Markdown compatible con el Constructor de ShareLinx.
+
+DATOS DE ENTRADA
 
 CATEGORÍA PRINCIPAL:
-Referencia Técnica: Guía de mensajes
+[NOMBRE DE LA CATEGORÍA]
 
-TEMAS INCLUIDOS:
-1. Catálogo/Guía de diagnóstico POS
-2. Catálogo/Guía de diagnóstico Bridge Core
-
-IMPORTANTE:
-Estos son 2 temas independientes de una categoría que tendrá 5 temas en total.
-No combines POS y Bridge Core en un solo tema.
-No incluyas NotebookLM.
-No inventes ni agregues los otros temas que todavía no fueron proporcionados.
+TEMAS:
+1. [NOMBRE DEL TEMA 1]
+2. [NOMBRE DEL TEMA 2]
+3. [AGREGA O ELIMINA RENGLONES SEGÚN LA CANTIDAD REAL DE TEMAS]
 
 FUENTES:
-- [ADJUNTAR O PEGAR LA DOCUMENTACIÓN DE DIAGNÓSTICO POS]
-- [ADJUNTAR O PEGAR LA DOCUMENTACIÓN DE DIAGNÓSTICO BRIDGE CORE]
+- [ADJUNTA O PEGA LAS FUENTES DEL TEMA 1]
+- [ADJUNTA O PEGA LAS FUENTES DEL TEMA 2]
+- [AGREGA LAS FUENTES DE LOS DEMÁS TEMAS, SI EXISTEN]
 
-OBJETIVO:
-Reorganiza toda la información de las fuentes en un único archivo Markdown importable, conservando POS y Bridge Core como dos cuerpos o módulos independientes.
+OBJETIVO
 
-JERARQUÍA OBLIGATORIA:
+Reorganiza toda la información proporcionada en un único archivo Markdown importable. Cada tema indicado en la lista TEMAS debe conservarse como un body o módulo independiente.
 
-# Referencia Técnica: Guía de mensajes
+ESTRUCTURA OBLIGATORIA
 
-## Catálogo/Guía de diagnóstico POS
+# [NOMBRE DE LA CATEGORÍA]
 
-### Objetivo y contexto
+## [NOMBRE DEL TEMA 1]
 
-**Objetivo**
+### [NOMBRE DE UNA SECCIÓN PRINCIPAL]
 
-[Contenido]
+[Contenido respaldado por las fuentes]
 
-**Contexto general**
+**[Subtítulo menor, si es necesario]**
 
-[Contenido]
+[Contenido respaldado por las fuentes]
 
-### Datos iniciales del incidente
+### [NOMBRE DE OTRA SECCIÓN PRINCIPAL]
 
-[Contenido]
+[Contenido respaldado por las fuentes]
 
-### Dónde consultar la evidencia
+## [NOMBRE DEL TEMA 2]
 
-[Contenido]
+### [NOMBRE DE UNA SECCIÓN PRINCIPAL]
 
-### Cómo analizar la evidencia
+[Contenido respaldado por las fuentes]
 
-[Contenido]
+REPETICIÓN
 
-### Aplicación en Costco
+Repite el bloque que comienza con ## una vez por cada tema de la lista TEMAS. No existe un límite fijo: la misma estructura debe funcionar con uno, dos, cinco o cualquier cantidad de temas.
 
-[Contenido]
+REGLAS DE ESTRUCTURA
 
-### Consideraciones importantes
+1. Crea exactamente un encabezado de nivel 1 (#) para la categoría principal.
+2. Crea exactamente un encabezado de nivel 2 (##) por cada tema proporcionado.
+3. La cantidad total de encabezados ## debe ser idéntica a la cantidad de temas de la lista TEMAS.
+4. Cada encabezado ## representa un body independiente y genera una tarjeta independiente en el índice del Constructor de ShareLinx.
+5. Conserva el nombre de cada tema exactamente como fue proporcionado.
+6. No combines dos o más temas dentro de un mismo encabezado ##.
+7. No dividas un solo tema en varios encabezados ##.
+8. Usa encabezados de nivel 3 (###) para todas las secciones internas de cada tema.
+9. Usa negritas para subtítulos menores; no los conviertas en encabezados ##.
+10. Las secciones internas deben surgir de las fuentes. No impongas apartados que no correspondan al contenido.
+11. No generes manualmente una sección llamada Índice; el constructor la crea automáticamente.
+12. No agregues temas que no estén incluidos en la lista TEMAS.
+13. Conserva íntegramente párrafos, listas, tablas, rutas, nombres de archivos, mensajes, procedimientos, advertencias, términos técnicos y datos por validar.
+14. No resumas ni elimines información respaldada por las fuentes.
+15. No inventes versiones, rutas, componentes, procesos o conclusiones.
+16. Si falta información necesaria, escribe Por validar.
+17. Usa únicamente Markdown estándar. No agregues HTML, CSS, JavaScript ni bloques style.
+18. No escribas introducciones antes del documento ni explicaciones después.
 
-[Contenido]
+CONTROL FINAL
 
-### Idea clave
+Antes de entregar, comprueba internamente que:
+- Existe exactamente un encabezado #.
+- El número de encabezados ## coincide exactamente con el número de temas recibido.
+- Cada tema tiene un único encabezado ## y permanece independiente.
+- Todas las secciones internas utilizan ###.
+- No se agregó, eliminó, combinó ni dividió ningún tema.
+- No se eliminó ninguna tabla, lista ni información respaldada.
+- El resultado está listo para importarse directamente en el Constructor de ShareLinx.
 
-[Contenido]
+ENTREGA
 
-### Glosario
-
-[Contenido]
-
-## Catálogo/Guía de diagnóstico Bridge Core
-
-### Objetivo y contexto
-
-**Objetivo**
-
-[Contenido]
-
-**Contexto general**
-
-[Contenido]
-
-### Datos iniciales del incidente
-
-[Contenido]
-
-### Dónde consultar la evidencia
-
-[Contenido]
-
-### Cómo analizar la evidencia
-
-[Contenido]
-
-### Aplicación en Costco
-
-[Contenido]
-
-### Consideraciones importantes
-
-[Contenido]
-
-### Idea clave
-
-[Contenido]
-
-### Glosario
-
-[Contenido]
-
-REGLAS DE ESTRUCTURA:
-
-1. Debe existir exactamente un encabezado de nivel 1: # Referencia Técnica: Guía de mensajes.
-2. Deben existir exactamente dos encabezados de nivel 2: uno para POS y otro para Bridge Core.
-3. El constructor utiliza los encabezados de nivel 2 para crear el índice; por lo tanto, debe mostrar solamente 2 tarjetas.
-4. Todas las divisiones internas de cada tema deben utilizar encabezados de nivel 3.
-5. Los subtítulos menores deben escribirse en negritas.
-6. No conviertas Objetivo, Contexto general, Información requerida u otros apartados menores en encabezados de nivel 2.
-7. No generes manualmente una sección llamada Índice. El constructor la creará automáticamente.
-8. No unas los nombres en un título como Guía de diagnóstico POS y Bridge Core.
-9. Conserva íntegramente párrafos, listas, tablas, rutas, nombres de archivos, mensajes, procedimientos, advertencias, términos técnicos y datos por validar.
-10. No resumas ni elimines información respaldada por las fuentes.
-11. No inventes versiones, rutas, componentes, procesos o conclusiones.
-12. Si falta información, escribe Por validar.
-13. Usa únicamente Markdown estándar. No agregues HTML, CSS, JavaScript ni bloques style.
-14. No escribas introducciones fuera del documento ni explicaciones posteriores.
-
-CONTROL FINAL:
-
-Antes de entregar, confirma internamente que:
-- Hay 1 encabezado #.
-- Hay exactamente 2 encabezados ##.
-- POS y Bridge Core permanecen separados.
-- Las secciones internas utilizan ###.
-- No aparece NotebookLM.
-- No se creó un tercer tema.
-- Ninguna tabla o lista fue eliminada.
-- El resultado está listo para importarse directamente en el Constructor de ShareLinks.
-
-ENTREGA:
-Devuelve exclusivamente el contenido Markdown final, comenzando con:
-# Referencia Técnica: Guía de mensajes`;
+Devuelve exclusivamente el contenido Markdown final y comienza con:
+# [NOMBRE DE LA CATEGORÍA]`;
 let promptMode="markdown";
-function renderPrompt(){const markdown=promptMode==="markdown",value=markdown?PROMPT_MARKDOWN:PROMPT;$("#prompt-output").value=value;$("#prompt-help").textContent=markdown?"Prepara varios temas independientes en un Markdown que el constructor puede importar sin inflar el índice.":"Genera directamente el CSS y HTML restringido con el diseño institucional.";$$('[data-prompt-mode]').forEach(button=>button.classList.toggle("active",button.dataset.promptMode===promptMode))}
+function renderPrompt(){const markdown=promptMode==="markdown",value=markdown?PROMPT_MARKDOWN_GENERIC:PROMPT;$("#prompt-output").value=value;$("#prompt-help").textContent=markdown?"Prepara cualquier cantidad de temas independientes: un encabezado ## y una tarjeta del índice por cada tema.":"Genera directamente el CSS y HTML restringido con el diseño institucional.";$$('[data-prompt-mode]').forEach(button=>button.classList.toggle("active",button.dataset.promptMode===promptMode))}
 function setModes(prefix,mode){$$(`[data-${prefix}-mode]`).forEach(b=>b.classList.toggle("active",b.dataset[prefix+"Mode"]===mode));const preview=$("#"+prefix+"-preview"),output=$("#"+prefix+"-output");preview.classList.toggle("active",mode==="preview");output.classList.toggle("active",mode==="source")}
 $$('.tab').forEach(b=>b.onclick=()=>{$$('.tab').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${b.dataset.view}`))});
 $("#add-section").onclick=()=>{theme.sections.push(newSection());renderEditors()};$("#theme-example").onclick=()=>{$("#theme-eyebrow").value="DOCUMENTACIÓN TÉCNICA NAPSE · COSTCO WHOLESALE";$("#theme-title").value="Visión General - Cuenta y Operaciones de Costco";$("#theme-subtitle").value="Compilación técnica integral: modelo de negocio, metodología de estudio de la cuenta y panorama operativo transaccional.";$("#theme-tags").value="🏬 Warehouse Club, 💳 Membresías Personal & Negocio, 🏷️ Kirkland Signature, 📊 4 Perspectivas de Análisis";$("#theme-highlights").value="Modelo Comercial | Selección limitada, alto volumen, rotación acelerada y cuota de membresía.\nOperación POS | Integración end-to-end entre cajas, áreas especializadas, servicios de fondo y AS400.";$("#theme-stats").value="933 | Sucursales Globales\n43 | Sucursales en México\n4 | Perspectivas de Análisis\n6 | Bloques Operativos";theme.sections=[newSection("Qué es Costco: Visión General y Modelo de Negocio"),newSection("Aprende del Cliente de tu Asignación"),newSection("Operaciones que Realiza Costco: Panorama Operativo")];theme.sections[1].blocks=[newBlock("steps","Proceso | Ubicar el paso exacto, el usuario y el resultado esperado.\nRegla | Identificar datos de entrada, condiciones, cálculos y autorizaciones.\nEvidencia | Comparar display, ticket, Journal y TLOG."),(()=>{const b=newBlock("table","POS | Punto de venta | Operación\nVTOL | Pagos | Autorización");b.extra="Componente | Función | Resultado";return b})()];renderEditors()};
@@ -268,7 +215,7 @@ $("#header-image-remove").onclick=()=>{releasePreserved("header");headerImage={d
 $$('[data-theme-mode]').forEach(b=>b.onclick=()=>setModes('theme',b.dataset.themeMode));$$('[data-header-mode]').forEach(b=>b.onclick=()=>setModes('header',b.dataset.headerMode));
 $("#theme-copy").onclick=()=>copy(rawOutput.theme);$("#header-copy").onclick=()=>copy(rawOutput.header);$("#theme-download").onclick=()=>download(slug($("#theme-title").value)+"_HTML.md",rawOutput.theme);$("#header-download").onclick=()=>download(slug($("#header-client").value)+"_CABECERA.md",rawOutput.header);
 $("#header-example").onclick=()=>{$("#header-client").value="Costco";$("#header-eyebrow").value="CLIENTE · DOCUMENTACIÓN TÉCNICA NAPSE";$("#header-subtitle").value="Centro de documentación para la operación, arquitectura, integraciones y soluciones implementadas para Costco México.";$("#header-tags").value="Punto de venta, VTOL, Pre Scan, Bridge Mobile";$("#header-image-alt").value="Logo de Costco Wholesale";$("#header-context").value="Napse es un proveedor tecnológico clave para Costco México, apoyando en la transformación digital de puntos de venta, proveyendo el gateway de pago VTOL y soluciones de movilidad, como el sistema “Pre Scan” para agilizar el cobro en filas y procesar diversas formas de pago, optimizando la experiencia en tienda.";$("#header-history").value="Napse ha trabajado con Costco desde hace años, siendo uno de sus primeros clientes internacionales y actualizando continuamente la tecnología de pago conforme aparecen nuevas formas de consumo.";$("#header-relations").value="VTOL · Gateway de pagos | Gestiona tarjetas, pagos de servicios y billeteras digitales en un único punto, reduciendo errores humanos.\nPre Scan · Movilidad | Bridge Mobile permite escanear productos antes de llegar a caja y reducir los tiempos de espera.\nTransformación digital | Centraliza la gestión del punto de venta y ayuda a agilizar la operación de las filas.";$("#header-links").value="Manuales de usuario | Operación, interacción con POS e integraciones. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Manuales+de+Usuario\nInstalación y configuración | Documentación específica de implementación. | https://share.linx.com.br/pages/viewpage.action?pageId=647157328\nReferencia técnica | Arquitectura, parámetros e integraciones. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Referencia+Tecnica\nProyectos y PC | Alcance, diseño, calidad y entrega. | https://share.linx.com.br/pages/viewpage.action?pageId=647157331\nOtros documentos | Material histórico pendiente de clasificación. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Otros\nBase técnica | Consulta técnica complementaria de la cuenta. | https://share.linx.com.br/display/NAPSENOLA/Costco+-+Nestor+-+Base+Tecnica";$("#header-index").value="Visión General - Cuenta y Operaciones | costco-tema1-guide | Qué es Costco > que-es-costco; Aprende del cliente > aprende-del-cliente; Operaciones que realiza Costco > operaciones-costco\nUn Día en la Operación de Costco | costco-tema4-guide | El ciclo de la jornada > ciclo-jornada; Preparación antes de la apertura > preparacion-apertura; Operación durante el día > operacion-dia; Cierre de tienda > cierre-tienda\nArquitectura y Reglas de Negocio | costco-tema3-1-guide | Arquitectura del cliente > arquitectura-costco; Reglas de negocio > reglas-de-negocio; Prueba de reglas > metodologia-pruebas\nDispositivos y Plataforma POS | costco-tema3-2-guide | Periféricos > sec-dispositivos; Matriz operativa > sec-matriz; Toshiba 4690 OS > sec-sistema-operativo\nDefiniciones Base - Glosario Técnico | costco-glosario-guide | Objetivo > objetivo-glosario; Componentes POS > componentes-pos; Gestión de incidencias > reporte-incidencias";renderHeader()};$("#header-reset").onclick=()=>{localStorage.removeItem("sl-header");location.reload()};
-$$('[data-prompt-mode]').forEach(button=>button.onclick=()=>{promptMode=button.dataset.promptMode;renderPrompt()});renderPrompt();$("#prompt-copy").onclick=()=>copy(promptMode==="markdown"?PROMPT_MARKDOWN:PROMPT);$("#prompt-download").onclick=()=>download(promptMode==="markdown"?"PROMPT_MARKDOWN_SHARELINKS.md":"PROMPT_SHARELINKS_HTML_RESTRINGIDO.md",promptMode==="markdown"?PROMPT_MARKDOWN:PROMPT);
+$$('[data-prompt-mode]').forEach(button=>button.onclick=()=>{promptMode=button.dataset.promptMode;renderPrompt()});renderPrompt();$("#prompt-copy").onclick=()=>copy(promptMode==="markdown"?PROMPT_MARKDOWN_GENERIC:PROMPT);$("#prompt-download").onclick=()=>download(promptMode==="markdown"?"PROMPT_MARKDOWN_SHARELINX.md":"PROMPT_SHARELINX_HTML_RESTRINGIDO.md",promptMode==="markdown"?PROMPT_MARKDOWN_GENERIC:PROMPT);
 try{const saved=JSON.parse(localStorage.getItem("sl-theme"));if(saved){Object.entries(saved.fields||{}).forEach(([id,v])=>{if($("#"+id))$("#"+id).value=v});theme.sections=saved.sections||[]}}catch{}if(!theme.sections.length)theme.sections=[newSection("Objetivo y alcance")];try{const saved=JSON.parse(localStorage.getItem("sl-header"));headerImage={data:/^data:image\/(?:webp|png);base64,/i.test(saved?._imageData||"")?saved._imageData:"",name:saved?._imageName||""};Object.entries(saved||{}).forEach(([id,v])=>{if($("#"+id))$("#"+id).value=v})}catch{}updateHeaderImageControl();renderEditors();renderHeader();
 })();
 </script>
